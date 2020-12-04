@@ -9,6 +9,7 @@ The 4 coordinates are: Center X,Center Y,Width,Height, so an example of a box fi
 |Center X | Center Y | Width | Height | Rank |
 |----|----|----|----|----|
 | 6 | 5 | 4 | 3 | 0.8 |
+
 This would give a box that looks like this:
 
 
