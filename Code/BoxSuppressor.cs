@@ -14,9 +14,9 @@ namespace InterviewBenchmark {
             this.jaqardIndex = jaqardIndex;
             this.rankSuppressionValue = rankSuppressionValue;
         }
+        public List<Rectangle> SuppressTheBoxes(List<Rectangle> rectangles) {
+            var rects = rectangles.Where(x=>x.rank >= rankSuppressionValue).OrderBy(x => x.rank).ToList();
 
-        public List<Rectangle> SuppressTheBoxes(string inputBoxFile) {
-            var rects = GetOrderedFilteredRectangles(inputBoxFile, rankSuppressionValue);
             Stopwatch t = new Stopwatch();
             t.Start();
 
@@ -42,7 +42,12 @@ namespace InterviewBenchmark {
             Console.WriteLine($"{keep.Count} boxes kept, {discard.Count} removed in {t.ElapsedMilliseconds}ms");
             return keep;
         }
-        private List<Rectangle> GetOrderedFilteredRectangles(string inputBoxFile, double rankSuppressionValue) {
+
+        public List<Rectangle> SuppressTheBoxes(string inputBoxFile) {
+            var rects = ReadRectanglesFromFile(inputBoxFile, rankSuppressionValue);
+            return SuppressTheBoxes(rects);
+        }
+        private List<Rectangle> ReadRectanglesFromFile(string inputBoxFile, double rankSuppressionValue) {
             List<Rectangle> rects = new List<Rectangle>();
             using StreamReader reader = new StreamReader(inputBoxFile);
             reader.ReadLine(); //discard header
@@ -59,10 +64,9 @@ namespace InterviewBenchmark {
                 int y2 = y1 + h;
 
                 double rank = double.Parse(line[4]);
-                if (rank >= rankSuppressionValue)
-                    rects.Add(new Rectangle { x1 = x1, y1 = y1, x2 = x2, y2 = y2, rank = rank });
+                rects.Add(new Rectangle { x1 = x1, y1 = y1, x2 = x2, y2 = y2, rank = rank });
             }
-            return rects.OrderBy(x => x.rank).ToList();
+            return rects;
         }
 
         private double JaqardIndex(Rectangle a, Rectangle b) {
