@@ -11,7 +11,7 @@ The 4 coordinates are: Center X,Center Y,Width,Height, so an example of a box fi
 | 6 | 5 | 4 | 3 | 0.8 |
 ***
 This would give a box that looks like this:
-![](./Images/box-example.png)
+![](./Images/box-example.png =400x)
 ***
 The problem is, that some of these boxes overlap.
 We want to minimise the number of boxes by suppressing some of them. 
@@ -21,12 +21,13 @@ Higher rank values supercede lower values.
 In order to determine which rectangles will be suppressed, we will use a technique called the Jaquard Index.
 The formula for the Jaqard index is (Intersecting area of the rectangles)/(Union of the area of the rectangles)
 
-![](https://miro.medium.com/max/422/1*9vgYblWTjP0Np7q_PUmlrw.png)
+![](https://miro.medium.com/max/422/1*9vgYblWTjP0Np7q_PUmlrw.png =400x)
 
 If the Intersection over Union (Jaqard Index) is greater than a certain value (called the Jaqard index threshold), then the box with the lower Rank will be ignored. The jaqard index threshold is from zero to 1
 
 In order to make our algorithm faster, we also have a Rank Threshold. Boxes below a certain Rank threshold will be ignored entirely! 
-![](./Images/poof.gif)
+
+![](./Images/poof.gif =200x)
 
 ## What do we want you to do?
 In this fictional situation, you will have 2 tasks. First, write a set of acceptance criteria for this algorithm, using whatever format you feel comfortable with.
