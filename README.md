@@ -22,7 +22,7 @@ Higher rank values supercede lower values.
 In order to determine which rectangles will be suppressed, we will use a technique called the Jaquard Index.
 The formula for the Jaqard index is (Intersecting area of the rectangles)/(Union of the area of the rectangles)
 
-<img src="https://miro.medium.com/max/422/1*9vgYblWTjP0Np7q_PUmlrw.png" width="400px" />
+<img src="https://miro.medium.com/max/422/1*9vgYblWTjP0Np7q_PUmlrw.png" width="600px" />
 
 If the Intersection over Union (Jaqard Index) is greater than a certain value (called the Jaqard index threshold), then the box with the lower Rank will be ignored. The jaqard index threshold is from zero to 1
 
