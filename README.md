@@ -21,15 +21,18 @@ Each boxes has a Rank which denotes how important it is.
 Higher rank values supercede lower values.
 
 In order to determine which rectangles will be suppressed, we will use a technique called the Jaquard Index.
-The formula for the Jaqard index is (Intersecting area of the rectangles)/(Union of the area of the rectangles)
+The formula for the Jaqard index is `(Intersecting area of the rectangles) divided by (Union of the area of the rectangles)`
 
-<img src="https://miro.medium.com/max/422/1*9vgYblWTjP0Np7q_PUmlrw.png" width="400px" />
+<img src="./Images/jaqard.png" width="600px" />
 
 If the Intersection over Union (Jaqard Index) is greater than a certain value (called the Jaqard index threshold), then the box with the lower Rank will be ignored. The jaqard index threshold is from zero to 1
 
 In order to make our algorithm faster, we also have a Rank Threshold. Boxes below a certain Rank threshold will be ignored entirely! 
 
 <img src="./Images/poof.gif" width="200px"/>
+
+## What outcome do we get
+We want a list of all boxes in a file that *do not* get suppressed by the above formula
 
 ## What do we want you to do?
 In this fictional situation, you will have 2 tasks. First, write a set of acceptance criteria for this algorithm, using whatever format you feel comfortable with.
