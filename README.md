@@ -9,10 +9,11 @@ The 4 coordinates are: Center X,Center Y,Width,Height, so an example of a box fi
 |Center X | Center Y | Width | Height | Rank |
 |----|----|----|----|----|
 | 6 | 5 | 4 | 3 | 0.8 |
-***
 This would give a box that looks like this:
+
+
 <img src="./Images/box-example.png" width="400px"/>
-***
+
 The problem is, that some of these boxes overlap.
 We want to minimise the number of boxes by suppressing some of them. 
 Each boxes has a Rank which denotes how important it is. 
