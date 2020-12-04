@@ -10,12 +10,12 @@ namespace InterviewBenchmark {
         private readonly double jaqardIndex;
         private readonly double rankSuppressionValue;
 
-        public BoxSuppressor(double jaqardIndex, double rankSuppressionValue) {
+        public BoxSuppressor(double jaqardIndex = 0.4, double rankSuppressionValue = 0.5) {
             this.jaqardIndex = jaqardIndex;
             this.rankSuppressionValue = rankSuppressionValue;
         }
         public List<Rectangle> SuppressTheBoxes(List<Rectangle> rectangles) {
-            var rects = rectangles.Where(x=>x.rank >= rankSuppressionValue).OrderBy(x => x.rank).ToList();
+            var rects = rectangles.Where(x=>x.rank >= rankSuppressionValue).ToList();
 
             Stopwatch t = new Stopwatch();
             t.Start();
@@ -44,23 +44,21 @@ namespace InterviewBenchmark {
         }
 
         public List<Rectangle> SuppressTheBoxes(string inputBoxFile) {
-            var rects = ReadRectanglesFromFile(inputBoxFile, rankSuppressionValue);
+            var rects = ReadRectanglesFromFile(inputBoxFile);
             return SuppressTheBoxes(rects);
         }
-        private List<Rectangle> ReadRectanglesFromFile(string inputBoxFile, double rankSuppressionValue) {
+        private List<Rectangle> ReadRectanglesFromFile(string inputBoxFile) {
             List<Rectangle> rects = new List<Rectangle>();
             using StreamReader reader = new StreamReader(inputBoxFile);
             reader.ReadLine(); //discard header
             while (!reader.EndOfStream) {
                 string[] line = reader.ReadLine().Split(',', StringSplitOptions.RemoveEmptyEntries);
 
-                int cx = int.Parse(line[0]);
-                int cy = int.Parse(line[1]);
+                int x1 = int.Parse(line[0]);
+                int y1 = int.Parse(line[1]);
                 int w = int.Parse(line[2]);
                 int h = int.Parse(line[3]);
-                int x1 = cx - w / 2;
                 int x2 = x1 + w;
-                int y1 = cy - h / 2;
                 int y2 = y1 + h;
 
                 double rank = double.Parse(line[4]);
@@ -68,19 +66,18 @@ namespace InterviewBenchmark {
             }
             return rects;
         }
-
         private double JaqardIndex(Rectangle a, Rectangle b) {
             int ix1 = Math.Max(a.x1, b.x1);
             int iy1 = Math.Max(a.y1, b.y1);
             int ix2 = Math.Min(a.x2, b.x2);
             int iy2 = Math.Min(a.y2, b.y2);
-            int iw = ix2 - ix1;
-            int ih = iy2 - iy1;
+            int iw = Math.Max(ix2 - ix1,0);
+            int ih = Math.Max(iy2 - iy1,0);
             int intersect = iw * ih;
             if (intersect == 0) {
                 return 0;
             }
-            int union = RectArea(a) + RectArea(b);
+            int union = RectArea(a) + RectArea(b) - intersect;
             return (double)intersect / (double)union;
         }
 

@@ -1,6 +1,8 @@
 # CorpCorp Box Decisioning Algoritm
 ## Our Objective
-We here at Corpcorp are very concerned with Boxes. People often send us files, full of boxes and we are then responsible for chosing the best boxes out of this file.
+We here at Corpcorp are very concerned with Boxes. People often send us files, full of boxes and we are then responsible for chosing the best boxes out of this file. In order to get only the finest boxes we
+1. Look for overlapping boxes, and choose 1 of them based on a formula
+2. 
 
 ## How do we choose the best boxes? 
 Boxes come in CSV files, with 5 columns and a single header record. The columns are 4 Integer coordinates (`Center X,Center Y,Width,Height`) and one decimal value (`Rank`) (between zero and 1) representing the Rank. Rank is a representation of how important the box is, with a larger value (e.g 0.8) being more important than a smaller value (e.g. 0.4). There many be an arbitrarily large number of boxes in the file.
@@ -25,9 +27,9 @@ The formula for the Jaqard index is `(Intersecting area of the rectangles) divid
 
 <img src="./Images/jaqard.png" width="600px" />
 
-If the Intersection over Union (Jaqard Index) is greater than a certain value (called the Jaqard index threshold), then the box with the lower Rank will be ignored. The jaqard index threshold is from zero to 1
+If the Intersection over Union (Jaqard Index) is greater `0.4` (called the Jaqard index threshold), then the box with the lower Rank will be ignored.
 
-In order to make our algorithm faster, we also have a Rank Threshold. Boxes below a certain Rank threshold will be ignored entirely! 
+In order to make our algorithm faster, we also have a Rank Threshold. Boxes with a rank lower than `0.5` will be ignored entirely! 
 
 <img src="./Images/poof.gif" width="200px"/>
 

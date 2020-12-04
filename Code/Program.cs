@@ -23,6 +23,10 @@ namespace InterviewBenchmark {
             var rects = b.SuppressTheBoxes(inputFile);
         }
 
+        private static void WriteToOutputFile(List<Rectangle> rectangles) {
+            //do this later
+        }
+
 
     }
 
