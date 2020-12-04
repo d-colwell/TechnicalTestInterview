@@ -37,13 +37,20 @@ In order to make our algorithm faster, we also have a Rank Threshold. Boxes with
 We want a list of all boxes in a file that *do not* get suppressed by the above formula
 
 ## What do we want you to do?
-In this fictional situation, you will have 2 tasks. First, we have written an acceptance criteria with inputs and outputs. You are to write a C# automated test to validate that this is working
+In this fictional situation, you will have 2 tasks. 
+### Task 1:
+We have written an acceptance criteria with inputs and outputs. You are to write a C# automated test to validate that this is working
 
 ![](./Images/acceptance.png)
 
-The code does contain bugs, write out some additional acceptance criteria and tests to find the bugs.
+### Task 2:
+The code does contain bugs, write out some additional acceptance criteria that the Devs can use to find the bugs.
 
-Please note:
+### Task 3:
+If you got this far, you are doing well. Write some automated tests to test your acceptance criteria
+
+
+### Please note:
 1. Tests should be written in C#
 2. Tests should be able to be run using a test framework such as NUnit, XUnit, MSTest, etc
 3. There are bugs in the program, we want you to find them
