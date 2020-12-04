@@ -23,19 +23,27 @@ The formula for the Jaqard index is (Intersecting area of the rectangles)/(Union
 
 ![](https://miro.medium.com/max/422/1*9vgYblWTjP0Np7q_PUmlrw.png)
 
-If the Intersection over Union (Jaqard Index) is greater than a certain value (called the Jaqard index threshold), then the box with the lower Rank will be ignored.
+If the Intersection over Union (Jaqard Index) is greater than a certain value (called the Jaqard index threshold), then the box with the lower Rank will be ignored. The jaqard index threshold is from zero to 1
 
-In order to make our algorithm faster, we also have a Rank Threshold. Boxes below a certain Rank threshold will be ignored entirely!
+In order to make our algorithm faster, we also have a Rank Threshold. Boxes below a certain Rank threshold will be ignored entirely! 
+![](./Images/poof.gif)
 
 ## What do we want you to do?
 In this fictional situation, you will have 2 tasks. First, write a set of acceptance criteria for this algorithm, using whatever format you feel comfortable with.
 
-Second We have written an algoritm, you can find it in the [Code](./Code) directory. We are not really sure that it is working very well. Your job is to write some *automated* tests for it, to determine if it is working correctly.
+Second we have written an algoritm, you can find it in the [Code](./Code) directory. We are not really sure that it is working very well. Your job is to write some *automated* tests for it, to determine if it is working correctly.
 
 Please note:
 1. Tests should be written in C#
 2. Tests should be able to be run using a test framework such as NUnit, XUnit, MSTest, etc
 3. There are bugs in the program, we want you to find them
 4. There is an example file [Boxes.csv](./Code/boxes.csv) for you to use as a reference. Feel free to copy it and modify it, it is randomised data.
+
+## How do i use the program?
+
+You can call the command line by building the project and calling the output executable `InterviewBenchmark.exe "input file" "jaqard threshold" "rank threshold"`
+Passing no values will result in defaults being passed. Read the code to find out what they are
+
+Alternatively, you could use the `BoxSuppressor` class directly from coded component tests.
 
 Happy testing!
