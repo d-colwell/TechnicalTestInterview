@@ -12,7 +12,7 @@ The X and Y coordinate refer to the top left corner of the box.
 An example of a box file would look like this:
 | X | Y | Width | Height | Rank |
 |----|----|----|----|----|
-| 2 | 2 | 4 | 3 | 0.8 |
+| 2 | 2 | 4 | 3 | 0.6 |
 
 This would give a box that looks like this:
 
