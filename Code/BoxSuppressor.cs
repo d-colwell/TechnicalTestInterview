@@ -92,5 +92,7 @@ namespace InterviewBenchmark {
         public int x2;
         public int y2;
         public double rank;
+        public int Width() => x2 - x1;
+        public int Height() => y2 - y1;
     }
 }

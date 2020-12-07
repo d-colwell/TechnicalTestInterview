@@ -18,6 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="check-rank-threshold.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="smoke-test.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
