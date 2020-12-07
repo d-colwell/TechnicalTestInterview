@@ -39,16 +39,19 @@ In order to make our algorithm faster, we also have a Rank Threshold. Boxes with
 We want a list of all boxes in a file that *do not* get suppressed by the above formula
 
 ## What do we want you to do?
-In this fictional situation, you will have 2 tasks. 
+
 ### Task 1:
+Open the `InterviewBenchmark.sln` solution. We have added a Test Project with 2 tests. Run these tests. They are broken, but the code is working. Your job is to fix the running tests.
+
+### Task 2:
 We have written an acceptance criteria with inputs and outputs. You are to write a C# automated test to validate that this is working
 
 ![](./Images/acceptance.png)
 
-### Task 2:
+### Task 3:
 The code does contain bugs, write out some additional acceptance criteria that the Devs can use to find the bugs.
 
-### Task 3:
+### Task 4:
 If you got this far, you are doing well. Write some automated tests to test your acceptance criteria
 
 
@@ -56,7 +59,7 @@ If you got this far, you are doing well. Write some automated tests to test your
 1. Tests should be written in C#
 2. Tests should be able to be run using a test framework such as NUnit, XUnit, MSTest, etc
 3. There are bugs in the program, we want you to find them
-4. There is an example file [Boxes.csv](./Code/boxes.csv) for you to use as a reference. Feel free to copy it and modify it, it is randomised data.
+4. There is an example file [Boxes.csv](./Code/InterviewBenchmark/boxes.csv) for you to use as a reference. Feel free to copy it and modify it, it is randomised data.
 
 ## How do i use the program?
 
