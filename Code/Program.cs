@@ -6,8 +6,8 @@ using System.Linq;
 using System.Timers;
 
 namespace InterviewBenchmark {
-    class Program {
-        static void Main(string[] args) {
+    public class Program {
+        public static void Main(string[] args) {
             string inputFile = "boxes.csv";
             double jaqardIndex = 0.3;
             double suppressionValue = 0.5;
