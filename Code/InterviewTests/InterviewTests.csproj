@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Code\InterviewBenchmark.csproj" />
+    <ProjectReference Include="..\InterviewBenchmark\InterviewBenchmark.csproj" />
   </ItemGroup>
 
   <ItemGroup>

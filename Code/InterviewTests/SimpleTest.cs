@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace InterviewTests {
     [TestClass]
-    public class SimpleTest {
+    public class SmokeTests {
         [TestMethod]
         public void CheckProgramIsRunning() {
             InterviewBenchmark.Program.Main(new string[] { "smoke-test.csv" });
